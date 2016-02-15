@@ -34,7 +34,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/TlvLDbQ.gif' title='MovieViewer Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='hhttp://i.imgur.com/GmBmP18.gifv' title='MovieViewer Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -59,7 +59,10 @@ Challenges include learning to access the different subclasses from the main vie
     See the License for the specific language governing permissions and
     limitations under the License.
     
-    # Project 2 - MovieViewer
+    
+    
+    
+# Project 2 - MovieViewer
 
 MovieViewer is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
@@ -98,6 +101,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
+
 Checking to see the correct curly braces or parenthesis are closed in all functions
 
 ## License
