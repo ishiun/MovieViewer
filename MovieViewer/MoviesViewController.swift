@@ -23,12 +23,12 @@ class MoviesViewController: UIViewController{
     @IBOutlet weak var collectionView: UICollectionView!
     
     var movies: [NSDictionary]?
+    var endpoint: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     
         collectionView.dataSource = self
- 
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
@@ -39,7 +39,7 @@ class MoviesViewController: UIViewController{
         //
         
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+        let url = NSURL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")
         let request = NSURLRequest(
             URL: url!,
             cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
@@ -131,11 +131,11 @@ class MoviesViewController: UIViewController{
         let title = movie["title"] as! String
         let overview = movie["overview"] as! String
         let baseUrl = "http://image.tmdb.org/t/p/w500"
-        if let posterPath = movie["poster_path"] as? String{
+                if let posterPath = movie["poster_path"] as? String{
         
         let imageUrl = NSURL(string: baseUrl + posterPath)
         let imageRequest = NSURLRequest(URL: NSURL(string: baseUrl + posterPath)!)
-        
+
         
         cell.postersView.setImageWithURLRequest(
             imageRequest,
@@ -165,6 +165,11 @@ class MoviesViewController: UIViewController{
         cell.movieLabel.text = title
    
         print("row \(indexPath.row)")
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.redColor()
+        cell.selectedBackgroundView = backgroundView
+
+        
         return cell
 
         
